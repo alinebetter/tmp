@@ -594,7 +594,10 @@ components:
   securitySchemes:
     AlineAuth0StagingAPI:
       type: "oauth2"
-      flows: {}
+      flows:
+        authorizationCode:
+          authorizationUrl: "https://landell.eu.auth0.com/authorize?response_type=code&client_id=rdu8yTzM1qI2YIrA0Nz7x62rwCu4ymzh&redirect_uri=org.aline.app://landell.eu.auth0.com/ios/org.aline.app/callback&scope={scope}&state={state}"
+          tokenUrl: "https://landell.eu.auth0.com/oauth/token"
       x-amazon-apigateway-authorizer:
         identitySource: "$request.header.Authorization"
         jwtConfiguration:
