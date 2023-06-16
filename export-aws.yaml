@@ -1,0 +1,634 @@
+openapi: "3.0.1"
+info:
+  title: "staging-api"
+  version: "2023-03-24 10:15:49UTC"
+servers:
+- url: "https://staging-api.alinebetter.com/{basePath}"
+  variables:
+    basePath:
+      default: "staging"
+paths:
+  /collection:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /collection"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/mlabs_collection-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /collection/post:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /collection/post"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/aline_post"
+        connectionType: "INTERNET"
+  /content/report/dislike:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /content/report/dislike"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/mlabs_person_report"
+        connectionType: "INTERNET"
+  /framework/agenda:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /framework/agenda"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_user_activity"
+        connectionType: "INTERNET"
+  /router-content-browse:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-content-browse"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-content-browse/invocations"
+        connectionType: "INTERNET"
+  /router-content-browse-service:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-content-browse-service"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-content-browse-service/invocations"
+        connectionType: "INTERNET"
+  /router-post-browse:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-post-browse"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-post-browse/invocations"
+        connectionType: "INTERNET"
+  /router-post-browse-service:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-post-browse-service"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-post-browse-service/invocations"
+        connectionType: "INTERNET"
+  /router-user-discovery:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-discovery"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "2.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-discovery/invocations"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /router-user-discovery-service:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-discovery-service"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-discovery-service/invocations"
+        connectionType: "INTERNET"
+  /router-user-profile:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-profile"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-profile/invocations"
+        connectionType: "INTERNET"
+  /router-user-profile-service:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-profile-service"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-profile-service/invocations"
+        connectionType: "INTERNET"
+  /router-user-recommendation:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-recommendation"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-recommendation/invocations"
+        connectionType: "INTERNET"
+  /router-user-recommendation-service:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /router-user-recommendation-service"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-recommendation-service/invocations"
+        connectionType: "INTERNET"
+  /skills:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /skills"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/neo4j_get_skills?limit=30000"
+        connectionType: "INTERNET"
+  /user/inbox:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /user/inbox"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_notification-eu-w1"
+        connectionType: "INTERNET"
+  /webhooks/stripe:
+    x-amazon-apigateway-any-method:
+      responses:
+        default:
+          description: "Default response for ANY /webhooks/stripe"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://webhook-stripe-dot-rich-brace-292312.ew.r.appspot.com/"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /framework:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /framework"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_learning_framework"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    post:
+      responses:
+        default:
+          description: "Default response for POST /framework"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_learning_framework"
+        connectionType: "INTERNET"
+    delete:
+      responses:
+        default:
+          description: "Default response for DELETE /framework"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "DELETE"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_learning_framework"
+        connectionType: "INTERNET"
+    patch:
+      responses:
+        default:
+          description: "Default response for PATCH /framework"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "PATCH"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_learning_framework"
+        connectionType: "INTERNET"
+  /profile/bookmark:
+    post:
+      responses:
+        default:
+          description: "Default response for POST /profile/bookmark"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_bookmark-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    delete:
+      responses:
+        default:
+          description: "Default response for DELETE /profile/bookmark"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_bookmark-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /company/activity:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/activity"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_company_usage-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /company/list:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/list"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_directory-eu-w1?target=company&action=list"
+        connectionType: "INTERNET"
+  /company/team:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/team"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://staging-api.alinebetter.com/company/activity?guid=&target=list"
+        connectionType: "INTERNET"
+    post:
+      responses:
+        default:
+          description: "Default response for POST /company/team"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_directory-eu-w1?target=team&action=create"
+        connectionType: "INTERNET"
+  /company/user:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/user"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/auth0_company_user"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    post:
+      responses:
+        default:
+          description: "Default response for POST /company/user"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/auth0_company_user"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /company/user/{guid}/activities:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/user/{guid}/activities"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_query_activities"
+        connectionType: "INTERNET"
+    parameters:
+    - name: "guid"
+      in: "path"
+      description: "Generated path parameter for guid"
+      required: true
+      schema:
+        type: "string"
+  /company/user/{guid}/library:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /company/user/{guid}/library"
+      x-amazon-apigateway-integration:
+        requestParameters:
+          overwrite:querystring.guid: "$request.path.guid[0]"
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_library_query-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    parameters:
+    - name: "guid"
+      in: "path"
+      description: "Generated path parameter for guid"
+      required: true
+      schema:
+        type: "string"
+  /estimate:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /estimate"
+      security:
+      - AlineAuth0StagingAPI: []
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/aline_estimate_consumption_item"
+        connectionType: "INTERNET"
+  /library:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /library"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/mlabs_query_categories"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /new/post:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /new/post"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "2.0"
+        type: "aws_proxy"
+        httpMethod: "POST"
+        uri: "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:854166040594:function:router-user-discovery/invocations"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /person/report:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /person/report"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_report-eu-w1"
+        connectionType: "INTERNET"
+    post:
+      responses:
+        default:
+          description: "Default response for POST /person/report"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_report-eu-w1"
+        connectionType: "INTERNET"
+  /post:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /post"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/mlabs_post_query-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    post:
+      responses:
+        default:
+          description: "Default response for POST /post"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/mlabs_post_query-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /post/info:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /post/info"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://staging-api.alinebetter.com/collection/post?parent=60dc5ba11b5cad3cb843a1d1"
+        connectionType: "INTERNET"
+  /post/news:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /post/news"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://staging-api.alinebetter.com/collection/post?parent=60d95b056cf118a1d41f4411"
+        connectionType: "INTERNET"
+  /profile:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /profile"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_profile"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    post:
+      responses:
+        default:
+          description: "Default response for POST /profile"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_person_profile"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /search/collection:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /search/collection"
+      x-amazon-apigateway-integration:
+        requestParameters:
+          append:querystring.in: "collection"
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_search-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /search/content:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /search/content"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "GET"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_library_query-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /search/user:
+    get:
+      responses:
+        default:
+          description: "Default response for GET /search/user"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_search-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+    post:
+      responses:
+        default:
+          description: "Default response for POST /search/user"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_search-eu-w1"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /roadmap:
+    patch:
+      responses:
+        default:
+          description: "Default response for PATCH /roadmap"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "PATCH"
+        uri: "https://us-central1-rich-brace-292312.cloudfunctions.net/mlabs_roadmap_query"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+  /metadata:
+    post:
+      responses:
+        default:
+          description: "Default response for POST /metadata"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://aline-metadata-parser-pr4x2jzvzq-lz.a.run.app"
+        connectionType: "INTERNET"
+  /opengraph:
+    post:
+      responses:
+        default:
+          description: "Default response for POST /opengraph"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "POST"
+        uri: "https://aline-opengraph-parser-pr4x2jzvzq-lz.a.run.app"
+        connectionType: "INTERNET"
+  /post/activity:
+    post:
+      responses:
+        default:
+          description: "Default response for POST /post/activity"
+      x-amazon-apigateway-integration:
+        payloadFormatVersion: "1.0"
+        type: "http_proxy"
+        httpMethod: "ANY"
+        uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_simple_query"
+        connectionType: "INTERNET"
+        timeoutInMillis: 30000
+components:
+  securitySchemes:
+    AlineAuth0StagingAPI:
+      type: "oauth2"
+      flows: {}
+      x-amazon-apigateway-authorizer:
+        identitySource: "$request.header.Authorization"
+        jwtConfiguration:
+          audience:
+          - "https://landell.eu.auth0.com/userinfo"
+          - "landell.eu.auth0.com"
+          - "landell.eu.auth0.com/userinfo"
+          - "staging-api.alinebetter.com"
+          issuer: "https://landell.eu.auth0.com/"
+        type: "jwt"
+  x-amazon-apigateway-integrations:
+    unusedIntegration_h0aqtuq:
+      payloadFormatVersion: "1.0"
+      type: "http_proxy"
+      httpMethod: "ANY"
+      uri: "https://europe-west1-rich-brace-292312.cloudfunctions.net/aline_learning_framework"
+      connectionType: "INTERNET"
+      timeoutInMillis: 30000
+x-amazon-apigateway-cors:
+  allowMethods:
+  - "*"
+  allowHeaders:
+  - "*"
+  exposeHeaders:
+  - "*"
+  maxAge: 0
+  allowCredentials: true
+  allowOrigins:
+  - "http://localhost:3000"
+  - "http://localhost:8000"
+  - "https://admin.aline.am"
+  - "https://admin.alinebetter.com"
+  - "https://demo.alinebetter.com"
+  - "https://localhost:3000"
+  - "https://staging-api.alinebetter.com"
+  - "https://staging-doc.alinebetter.com"
+x-amazon-apigateway-importexport-version: "1.0"
